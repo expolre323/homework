@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L5 子系统 Sub-systems · 线控底盘平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="inner">
+  <a class="logo" href="index.html"><span class="sq"></span><span class="t">线控底盘平台</span></a>
+  <a class="it" href="index.html">首页</a>
+  <a class="it" href="l1-mission.html">任务</a>
+  <a class="it" href="l2-sos.html">体系</a>
+  <a class="it" href="l3-vehicle.html">整机</a>
+  <a class="it" href="l4-system.html">系统 ★</a>
+  <a class="it on" href="l5-subsystems.html">子系统</a>
+  <a class="it" href="l6-modules.html">模块</a>
+  <a class="it" href="trace.html">追溯链</a><span class="sp"></span>
+</div></nav>
+
+<header class="page-hero ph5"><div class="wrap">
+  <div class="crumb anim"><a href="index.html">首页</a> / L5 子系统 Sub-systems</div>
+  <h1 class="anim d1">子系统 <span style="font-size:22px;opacity:.8">Sub-systems</span></h1>
+  <div class="en anim d2">能力由什么分担？</div>
+  <div class="q anim d3">线控底盘平台能力由 5 个执行子系统 + 1 个公共支撑骨干分担，全部取消机械直连，指令与状态经统一总线交互。</div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <table class="anim">
+    <tr><th>子系统</th><th>核心功能</th><th>关键指标</th><th>冗余/安全策略</th></tr>
+    <tr><td>线控转向 SbW</td><td>路感模拟 + 转向执行，转角闭环跟踪平台指令</td><td>转角精度 ±0.5°；阶跃响应 ≤ 80 ms；力矩范围 ≥ 6 N·m</td><td>双绕组电机 + 双控制器 + 双转角传感器，失效降级至单电机半力矩</td></tr>
+    <tr><td>线控制动 BBW</td><td>四轮独立压力/制动力控制，支持 AEB 直通</td><td>压力建立 ≤ 150 ms；轮端压力精度 ±0.3 bar</td><td>EMB 干式四轮独立 + EHB 液压备份；失效单轮可制动</td></tr>
+    <tr><td>线控驱动 DBW</td><td>四电机独立扭矩分配，能量回收协调</td><td>扭矩响应 ≤ 10 ms；回收与液压制动无缝衔接</td><td>扭矩监控通道独立校核（Torque Watchdog）</td></tr>
+    <tr><td>线控换挡 ShBW</td><td>挡位指令软锁定，P/R/N/D 状态管理</td><td>换挡响应 ≤ 100 ms；驻车锁止独立硬线</td><td>驻车 P 挡独立执行机构 + 机械应急释放</td></tr>
+    <tr><td>线控悬架（半主动/主动）</td><td>垂向力控制、车身姿态与高度调节</td><td>阻尼调节 ≤ 20 ms；高度调节范围 ±40 mm</td><td>失效默认进入舒适中位阻尼；储能源保证失电姿态保持</td></tr>
+    <tr><td>电源与通信骨干（公共）</td><td>冗余供电 + 控制报文传输</td><td>双路 12 V/48 V；CAN-FD 2 Mbit/s + 车载以太网</td><td>双电源双网络物理隔离，网关报文交叉校验</td></tr>
+  </table>
+
+  <div class="grid g2 anim d1">
+    <div class="card"><h3>子系统 → 平台的职责契约</h3><ul>
+      <li>每个子系统对上只暴露统一指令/状态接口（转角、压力、扭矩、挡位、高度）</li>
+      <li>闭环在子系统内部完成，平台只下发目标值与约束</li>
+      <li>健康状态（NORMAL / DEGRADED / FAILSAFE）周期上报平台</li>
+    </ul></div>
+    <div class="card"><h3>子系统间的协同关系</h3><ul>
+      <li>驱动扭矩 + 制动压力协调：能量回收与液压制动无缝切换</li>
+      <li>转向 + 悬架协同：大转角工况悬架主动抗侧倾</li>
+      <li>制动 + 换挡协同：驻车前自动降速、P 挡锁止时序</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="pn">
+  <a href="l4-system.html"><small>上一层 L4 ★</small><b>← 系统 System</b></a>
+  <a class="nx" href="l6-modules.html"><small>下一层 L6</small><b>模块 Modules →</b></a>
+</div></div>
+
+<footer><div class="wrap"><b style="color:#fff">Complex Systems Engineering 2026 · 小组作业 1</b>
+<div class="cols"><span><a href="index.html">返回首页</a></span><span>选定系统：面向高级别自动驾驶的线控底盘平台</span><span>2026.11.11</span></div></div></footer>
+</body></html>

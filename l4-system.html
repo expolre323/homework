@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L4 系统 ★ 线控底盘平台 · 本组选定层级</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="inner">
+  <a class="logo" href="index.html"><span class="sq"></span><span class="t">线控底盘平台</span></a>
+  <a class="it" href="index.html">首页</a>
+  <a class="it" href="l1-mission.html">任务</a>
+  <a class="it" href="l2-sos.html">体系</a>
+  <a class="it" href="l3-vehicle.html">整机</a>
+  <a class="it on" href="l4-system.html">系统 ★</a>
+  <a class="it" href="l5-subsystems.html">子系统</a>
+  <a class="it" href="l6-modules.html">模块</a>
+  <a class="it" href="trace.html">追溯链</a><span class="sp"></span>
+</div></nav>
+
+<header class="page-hero ph4"><div class="wrap">
+  <div class="crumb anim"><a href="index.html">首页</a> / L4 系统 System ★ 本组选定层级</div>
+  <h1 class="anim d1">系统 · 线控底盘平台 <span style="font-size:22px;opacity:.8">X-by-Wire Chassis</span></h1>
+  <div class="en anim d2">如何形成整车能力？</div>
+  <div class="q anim d3">线控底盘平台接收整车运动意图（轨迹/速度/加速度/安全约束），输出可控、可测、可预测的整车运动。</div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <div class="arch anim">
+    <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker></defs>
+      <rect x="10" y="105" width="150" height="90" rx="12" fill="#eef2ff" stroke="#1e5eff"/>
+      <text x="85" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e3a8a">整车运动意图</text>
+      <text x="85" y="165" text-anchor="middle" font-size="12" fill="#4a5568">轨迹·速度·加速度</text>
+      <line x1="160" y1="150" x2="240" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+      <rect x="245" y="30" width="220" height="240" rx="12" fill="#0b1f4b"/>
+      <text x="355" y="62" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">线控底盘平台</text>
+      <text x="355" y="82" text-anchor="middle" font-size="11" fill="#93c5fd">X-by-Wire Chassis</text>
+      <g font-size="12" fill="#e2e8f0">
+        <rect x="262" y="100" width="186" height="26" rx="6" fill="#1e3a8a"/><text x="355" y="118" text-anchor="middle">运动意图分解</text>
+        <rect x="262" y="134" width="186" height="26" rx="6" fill="#1e3a8a"/><text x="355" y="152" text-anchor="middle">多执行器协同仲裁</text>
+        <rect x="262" y="168" width="186" height="26" rx="6" fill="#1e3a8a"/><text x="355" y="186" text-anchor="middle">冗余与故障降级</text>
+        <rect x="262" y="202" width="186" height="26" rx="6" fill="#1e3a8a"/><text x="355" y="220" text-anchor="middle">状态估计与监测</text>
+      </g>
+      <line x1="465" y1="150" x2="545" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+      <g font-size="12" fill="#1a2332">
+        <rect x="550" y="40" width="150" height="52" rx="10" fill="#fff7ed" stroke="#ea580c"/><text x="625" y="62" text-anchor="middle" font-weight="bold">线控转向 SbW</text><text x="625" y="80" text-anchor="middle" fill="#4a5568">转角闭环 双冗余</text>
+        <rect x="550" y="104" width="150" height="52" rx="10" fill="#fff7ed" stroke="#ea580c"/><text x="625" y="126" text-anchor="middle" font-weight="bold">线控制动 BBW</text><text x="625" y="144" text-anchor="middle" fill="#4a5568">压力闭环 失效备份</text>
+        <rect x="550" y="168" width="150" height="52" rx="10" fill="#fff7ed" stroke="#ea580c"/><text x="625" y="190" text-anchor="middle" font-weight="bold">线控驱动 DBW</text><text x="625" y="208" text-anchor="middle" fill="#4a5568">扭矩闭环 快速响应</text>
+        <rect x="712" y="40" width="150" height="52" rx="10" fill="#fff7ed" stroke="#ea580c"/><text x="787" y="62" text-anchor="middle" font-weight="bold">线控换挡 ShBW</text><text x="787" y="80" text-anchor="middle" fill="#4a5568">挡位状态 软锁定</text>
+        <rect x="712" y="104" width="150" height="52" rx="10" fill="#fff7ed" stroke="#ea580c"/><text x="787" y="126" text-anchor="middle" font-weight="bold">线控悬架</text><text x="787" y="144" text-anchor="middle" fill="#4a5568">姿态闭环 高度调节</text>
+        <rect x="712" y="168" width="150" height="52" rx="10" fill="#f1f5f9" stroke="#94a3b8"/><text x="787" y="190" text-anchor="middle" font-weight="bold">电源·通信骨干</text><text x="787" y="208" text-anchor="middle" fill="#4a5568">冗余供电 CAN-FD/以太网</text>
+      </g>
+      <path d="M 625 220 C 625 262, 355 262, 355 274" stroke="#0d9488" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+      <text x="490" y="262" text-anchor="middle" font-size="12" fill="#0d9488">状态反馈闭环</text>
+    </svg>
+  </div>
+
+  <div class="kpis anim d1">
+    <div class="kpi"><b>≤ 10 ms</b><span>指令→执行端到端时延</span></div>
+    <div class="kpi"><b>100 Hz</b><span>控制闭环频率</span></div>
+    <div class="kpi"><b>±0.5°</b><span>前轮转角静态精度</span></div>
+    <div class="kpi"><b>ASIL-D</b><span>转向/制动功能安全等级</span></div>
+    <div class="kpi"><b>2/4</b><span>任意 1 执行器失效仍保持 2 轮可控</span></div>
+  </div>
+
+  <div class="scope anim d2">
+    <div class="card in-s"><h3>属于平台（In Scope）</h3><ul>
+      <li>运动意图分解（横/纵/垂三向解耦）</li>
+      <li>多执行器协同与扭矩/转角仲裁</li>
+      <li>冗余管理、故障检测与降级策略</li>
+      <li>车辆状态估计（车速、质心侧偏角）</li>
+      <li>统一接口、标定与版本管理</li>
+    </ul></div>
+    <div class="card out-s"><h3>不属于平台（Out of Scope）</h3><ul>
+      <li>感知算法与全局路线规划</li>
+      <li>云端调度与远程驾控系统本体</li>
+      <li>单一电机或制动卡钳的本体设计</li>
+      <li>座舱与车身域功能</li>
+    </ul></div>
+  </div>
+
+  <div class="card anim d3"><h3>四项平台设计原则</h3><ul>
+    <li><b>统一车辆运动接口</b>：降低自动驾驶算法与车型的耦合</li>
+    <li><b>纵横垂协同</b>：转向/制动/驱动/悬架统一仲裁，避免互相"打架"</li>
+    <li><b>Resilience</b>：故障可检测、可隔离、可降级、可安全停车</li>
+    <li><b>Evidence</b>：从需求、验证到运行数据形成安全证据链</li>
+  </ul></div>
+</div></section>
+
+<div class="wrap"><div class="pn">
+  <a href="l3-vehicle.html"><small>上一层 L3</small><b>← 整机 Vehicle</b></a>
+  <a class="nx" href="l5-subsystems.html"><small>下一层 L5</small><b>子系统 Sub-systems →</b></a>
+</div></div>
+
+<footer><div class="wrap"><b style="color:#fff">Complex Systems Engineering 2026 · 小组作业 1</b>
+<div class="cols"><span><a href="index.html">返回首页</a></span><span>选定系统：面向高级别自动驾驶的线控底盘平台</span><span>2026.11.11</span></div></div></footer>
+</body></html>

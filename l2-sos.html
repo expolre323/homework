@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L2 体系 SoS · 线控底盘平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="inner">
+  <a class="logo" href="index.html"><span class="sq"></span><span class="t">线控底盘平台</span></a>
+  <a class="it" href="index.html">首页</a>
+  <a class="it" href="l1-mission.html">任务</a>
+  <a class="it on" href="l2-sos.html">体系</a>
+  <a class="it" href="l3-vehicle.html">整机</a>
+  <a class="it" href="l4-system.html">系统 ★</a>
+  <a class="it" href="l5-subsystems.html">子系统</a>
+  <a class="it" href="l6-modules.html">模块</a>
+  <a class="it" href="trace.html">追溯链</a><span class="sp"></span>
+</div></nav>
+
+<header class="page-hero ph2"><div class="wrap">
+  <div class="crumb anim"><a href="index.html">首页</a> / L2 体系 SoS</div>
+  <h1 class="anim d1">体系 <span style="font-size:22px;opacity:.8">System of Systems</span></h1>
+  <div class="en anim d2">由谁协同完成使命？</div>
+  <div class="q anim d3">单个车辆无法独立完成无人运营任务，需要多系统组成"智能网联出行/物流体系"协同。</div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <table class="anim">
+    <tr><th>组成系统</th><th>角色</th><th>与底盘平台的交互</th></tr>
+    <tr><td>自动驾驶车队运营系统</td><td>任务调度、派单、ODD 管理</td><td>下发运营任务、速度与路线约束</td></tr>
+    <tr><td>云端监控与远程驾控中心</td><td>状态监视、远程接管兜底</td><td>接收底盘健康状态，异常时下发降级/停车指令</td></tr>
+    <tr><td>V2X 路侧基础设施（路云）</td><td>信号灯、路口、事件信息感知</td><td>提供超视距约束，参与速度规划输入</td></tr>
+    <tr><td>智能网联汽车（多车体系）</td><td>车队的执行节点</td><td>车-车协同，编队/路口通行协商</td></tr>
+    <tr><td>能源与补给体系</td><td>充电桩、换电站、维保网点</td><td>自动泊入充电位，底盘姿态协同</td></tr>
+    <tr><td>法规监管与保险体系</td><td>准入、数据监管、责任认定</td><td>要求运行数据可记录、可追溯（EDR/证据链）</td></tr>
+  </table>
+
+  <div class="grid g2">
+    <div class="card anim d1"><h3>体系级涌现要求</h3><ul>
+      <li>跨系统接口标准化（云端协议、V2X 消息集）</li>
+      <li>时间同步与通信确定性（TSN、5G 低时延）</li>
+      <li>任一组成系统失效，体系整体仍能安全降级</li>
+    </ul></div>
+    <div class="card anim d2"><h3>体系向整机的约束传递</h3><ul>
+      <li>ODD（运行设计域）边界 → 整车能力要求</li>
+      <li>远程接管时延 → 车内控制响应时延预算</li>
+      <li>监管数据要求 → 整车数据记录模块</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="pn">
+  <a href="l1-mission.html"><small>上一层 L1</small><b>← 任务 Mission</b></a>
+  <a class="nx" href="l3-vehicle.html"><small>下一层 L3</small><b>整机 Vehicle →</b></a>
+</div></div>
+
+<footer><div class="wrap"><b style="color:#fff">Complex Systems Engineering 2026 · 小组作业 1</b>
+<div class="cols"><span><a href="index.html">返回首页</a></span><span>选定系统：面向高级别自动驾驶的线控底盘平台</span><span>2026.11.11</span></div></div></footer>
+</body></html>

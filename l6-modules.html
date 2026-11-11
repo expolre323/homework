@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L6 模块 Modules · 线控底盘平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="inner">
+  <a class="logo" href="index.html"><span class="sq"></span><span class="t">线控底盘平台</span></a>
+  <a class="it" href="index.html">首页</a>
+  <a class="it" href="l1-mission.html">任务</a>
+  <a class="it" href="l2-sos.html">体系</a>
+  <a class="it" href="l3-vehicle.html">整机</a>
+  <a class="it" href="l4-system.html">系统 ★</a>
+  <a class="it" href="l5-subsystems.html">子系统</a>
+  <a class="it on" href="l6-modules.html">模块</a>
+  <a class="it" href="trace.html">追溯链</a><span class="sp"></span>
+</div></nav>
+
+<header class="page-hero ph6"><div class="wrap">
+  <div class="crumb anim"><a href="index.html">首页</a> / L6 模块 Modules</div>
+  <h1 class="anim d1">模块 <span style="font-size:22px;opacity:.8">Modules</span></h1>
+  <div class="en anim d2">物理功能如何实现？</div>
+  <div class="q anim d3">每个子系统由"感知模块 + 控制模块 + 执行模块 + 通信/电源模块"构成，模块级需求可量化、可验证。</div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <table class="anim">
+    <tr><th>所属子系统</th><th>模块</th><th>功能</th><th>关键要求（示例）</th></tr>
+    <tr><td rowspan="4">线控转向 SbW</td><td>转向执行电机模块</td><td>输出转向力矩</td><td>双三相绕组，单绕组 50% 力矩降级运行</td></tr>
+    <tr><td>转角/力矩传感模块</td><td>方向盘与轮端转角测量</td><td>双通道冗余，分辨率 ≤ 0.1°，采样 ≥ 1 kHz</td></tr>
+    <tr><td>路感模拟模块</td><td>生成驾驶员路感力矩</td><td>力矩梯度可标定，延迟 ≤ 5 ms</td></tr>
+    <tr><td>转向 ECU 模块</td><td>转向闭环控制</td><td>双 MCU 锁步核（ASIL-D），10 kHz 电流环</td></tr>
+    <tr><td rowspan="3">线控制动 BBW</td><td>EMB 卡钳执行模块</td><td>轮端夹紧力输出</td><td>力控精度 ±1%，失电可机械释放</td></tr>
+    <tr><td>压力/位移传感模块</td><td>压力与活塞位移测量</td><td>双传感器交叉验证，故障误报率 &lt; 10 ppm</td></tr>
+    <tr><td>制动控制 ECU 模块</td><td>压力闭环 + ABS/ESC 融合</td><td>150 ms 内建压，支持 AEB 预填充直通</td></tr>
+    <tr><td rowspan="2">线控驱动 DBW</td><td>驱动电机 + MCU 模块</td><td>轮端扭矩输出</td><td>峰值扭矩精度 ±2%，响应 ≤ 10 ms</td></tr>
+    <tr><td>扭矩监控模块</td><td>独立校核扭矩指令</td><td>与控制通道异构芯片，超差即断高压</td></tr>
+    <tr><td rowspan="2">线控换挡 ShBW</td><td>换挡执行器模块</td><td>驻车锁止/挡位状态切换</td><td>P 挡自锁，断电保持驻车</td></tr>
+    <tr><td>挡位反馈模块</td><td>实际挡位检测</td><td>双霍尔冗余，硬线信号备份</td></tr>
+    <tr><td rowspan="2">线控悬架</td><td>CDC/主动作动器模块</td><td>阻尼/垂向力调节</td><td>响应 ≤ 20 ms；主动式含储能源</td></tr>
+    <tr><td>高度/加速度传感模块</td><td>车身姿态测量</td><td>四角高度 + 三轴 IMU，同步采样</td></tr>
+    <tr><td rowspan="4">电源与通信骨干</td><td>冗余电源模块</td><td>双路低压供电与切换</td><td>任一路失效无扰切换（&lt; 2 ms）</td></tr>
+    <tr><td>网关/TSN 通信模块</td><td>域间报文路由与时间同步</td><td>CAN-FD + 车载以太网，报文端到端保护（E2E）</td></tr>
+    <tr><td>底盘域控制器模块</td><td>运动分解与仲裁主控</td><td>ASIL-D，双锁步 MCU 异构冗余</td></tr>
+    <tr><td>数据记录模块</td><td>控制指令与状态记录（EDR）</td><td>满足监管追溯，掉电保存</td></tr>
+  </table>
+
+  <div class="card anim d1"><h3>模块 → 子系统 → 平台的验证闭环</h3><ul>
+    <li>模块级：单体验证（精度、时延、冗余切换）→ 台架 HIL 测试</li>
+    <li>子系统级：执行器闭环性能 + 故障注入验证</li>
+    <li>平台级：整车运动控制指标（横摆跟踪、端到端时延）验收</li>
+  </ul></div>
+</div></section>
+
+<div class="wrap"><div class="pn">
+  <a href="l5-subsystems.html"><small>上一层 L5</small><b>← 子系统 Sub-systems</b></a>
+  <a class="nx" href="trace.html"><small>贯通案例</small><b>六层追溯链 →</b></a>
+</div></div>
+
+<footer><div class="wrap"><b style="color:#fff">Complex Systems Engineering 2026 · 小组作业 1</b>
+<div class="cols"><span><a href="index.html">返回首页</a></span><span>选定系统：面向高级别自动驾驶的线控底盘平台</span><span>2026.11.11</span></div></div></footer>
+</body></html>

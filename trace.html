@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>六层双向追溯链 · 线控底盘平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="inner">
+  <a class="logo" href="index.html"><span class="sq"></span><span class="t">线控底盘平台</span></a>
+  <a class="it" href="index.html">首页</a>
+  <a class="it" href="l1-mission.html">任务</a>
+  <a class="it" href="l2-sos.html">体系</a>
+  <a class="it" href="l3-vehicle.html">整机</a>
+  <a class="it" href="l4-system.html">系统 ★</a>
+  <a class="it" href="l5-subsystems.html">子系统</a>
+  <a class="it" href="l6-modules.html">模块</a>
+  <a class="it on" href="trace.html">追溯链</a><span class="sp"></span>
+</div></nav>
+
+<header class="page-hero phT"><div class="wrap">
+  <div class="crumb anim"><a href="index.html">首页</a> / 六层双向追溯链</div>
+  <h1 class="anim d1">六层双向追溯链 <span style="font-size:22px;opacity:.8">Traceability</span></h1>
+  <div class="en anim d2">任务决定体系，模块支撑能力</div>
+  <div class="q anim d3">场景：L4 Robotaxi 城市路口左转，遇横向冲突车辆需紧急减速避让。</div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <div class="trace anim">
+    <ol>
+      <li><b>L1 任务 Mission</b><p>安全准时完成无人载客运营 → 使命要求"冲突场景零碰撞、行程不中断"。</p></li>
+      <li><b>L2 体系 SoS</b><p>路侧系统提前推送路口冲突事件，云端下发 ODD 与限速约束 → 车队调度系统维持运营节拍。</p></li>
+      <li><b>L3 整机 Vehicle</b><p>整车决策选择减速 + 增大转向避让轨迹 → 校核载荷、速度与侧翻安全边界后生成运动意图。</p></li>
+      <li><b>L4 系统 System（线控底盘平台）</b><p>平台将意图分解：前轮转角 +32.5° 四轮协同、纵向 12→8 km/h 减速、悬架主动抗侧倾；系统状态 NORMAL，全通道健康。</p></li>
+      <li><b>L5 子系统 Sub-systems</b><p>SbW 双冗余通道闭环跟踪转角；BBW 四轮独立压力控制减速；悬架 20 ms 内调节阻尼抑制侧倾。</p></li>
+      <li><b>L6 模块 Modules</b><p>转向 ECU 10 kHz 电流环执行，转角传感双通道回读；EMB 卡钳 ±1% 力控；状态反馈经 TSN 网关进入下一控制周期。</p></li>
+    </ol>
+  </div>
+
+  <div class="grid g2">
+    <div class="card anim d1"><h3>↓ 需求自上而下分解</h3><ul>
+      <li>使命指标 → 体系协同约束 → 整车能力 → 系统职责 → 子系统指标 → 模块参数</li>
+      <li>每一层的需求都可向上追溯到上一层，且可量化、可验证</li>
+    </ul></div>
+    <div class="card anim d2"><h3>↑ 状态自下而上汇聚</h3><ul>
+      <li>模块状态 → 子系统健康度（NORMAL/DEGRADED/FAILSAFE）→ 系统可用性 → 整机 ODD 判定 → 体系运营指标</li>
+      <li>运行数据沉淀为安全证据链，支撑监管与保险</li>
+    </ul></div>
+  </div>
+
+  <div class="card anim d3"><h3>结论</h3><p>任务决定体系，体系约束整机，整机分配系统，系统分解子系统，子系统由模块实现物理功能；同时模块状态逐级向上汇聚为系统健康度、整机可用性与体系运营指标。每一层都有明确的输入、输出、边界与可度量指标，形成双向可追溯需求链。</p></div>
+</div></section>
+
+<div class="wrap"><div class="pn">
+  <a href="l6-modules.html"><small>上一层 L6</small><b>← 模块 Modules</b></a>
+  <a class="nx" href="index.html"><small>返回</small><b>首页 →</b></a>
+</div></div>
+
+<footer><div class="wrap"><b style="color:#fff">Complex Systems Engineering 2026 · 小组作业 1</b>
+<div class="cols"><span><a href="index.html">返回首页</a></span><span>选定系统：面向高级别自动驾驶的线控底盘平台</span><span>2026.11.11</span></div></div></footer>
+</body></html>
